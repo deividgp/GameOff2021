@@ -22,13 +22,13 @@ function preload ()
 {
     this.load.setBaseURL('http://labs.phaser.io');
     
-    // this.load.image('sky', 'assets/skies/space3.png');
-    // this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-    // this.load.image('red', 'assets/particles/red.png');
+    //this.load.image('sky', 'assets/skies/space3.png');
+    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+    this.load.image('red', 'assets/particles/red.png');
     this.load.image('sky', 'assets/skies/sky1.png');
-    this.load.image('ground', 'assets/platform.png');
-    this.load.image('star', 'assets/star.png');
-    this.load.image('bomb', 'assets/bomb.png');
+    this.load.image('ground', 'assets/sprites/platform.png');
+    this.load.image('star', 'assets/sprites/star.png');
+    this.load.image('bomb', 'assets/sprites/bomb.png');
 }
 
 function create ()
@@ -36,6 +36,14 @@ function create ()
     this.add.image(400, 300, 'sky');
 
     const particles = this.add.particles('red');
+
+    platforms = this.physics.add.staticGroup();
+
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+
+    platforms.create(600, 400, 'ground');
+    platforms.create(50, 250, 'ground');
+    platforms.create(750, 220, 'ground');
 
     const emitter = particles.createEmitter({
         speed: 100,
