@@ -2,7 +2,7 @@
   "name": "gameoff2021",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "nodemon": "nodemon index.js"
